@@ -39,6 +39,8 @@ form.addEventListener('submit', (e) => {
         }
         else if(remGuess==0){
             flag = 1;
+            let cn = document.querySelector('#correctNumber')
+            cn.innerHTML = rand_n
             let loser = document.querySelector('#loseBox')
             loser.style.display = "block"
 
@@ -69,3 +71,4 @@ let sb = document.querySelector("#SplayAgain")
 sb.addEventListener('click', ()=>{
     window.location.reload();
 })
+
