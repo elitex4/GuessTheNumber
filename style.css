@@ -1,0 +1,256 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #212121;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Wrapper */
+#wrapper {
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  background-color: #2a2a2a;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Heading */
+h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #00c853; /* green accent */
+  text-shadow: 0 0 8px rgba(0, 200, 83, 0.6);
+}
+
+/* Paragraphs */
+p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+/* Label */
+label {
+  display: block;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+/* Input field */
+#guessField {
+  color: #000;
+  width: 100%;
+  max-width: 300px;
+  height: 45px;
+  font-size: 20px;
+  border: 2px solid #555;
+  border-radius: 8px;
+  text-align: center;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#guessField:focus {
+  border-color: #00c853;
+  box-shadow: 0 0 8px rgba(0, 200, 83, 0.6);
+  outline: none;
+}
+
+/* Submit button */
+#subt {
+  background-color: #00c853;
+  color: #fff;
+  width: 100%;
+  max-width: 200px;
+  height: 45px;
+  border-radius: 8px;
+  font-size: 18px;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#subt:hover {
+  background-color: #00e676;
+  transform: scale(1.05);
+}
+
+/* Result section */
+.resultParas {
+  margin-top: 20px;
+  background: #333;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.guesses,
+.lastResult {
+  font-weight: bold;
+  color: #00e676;
+}
+
+
+#winBox {
+  display: none; /* hidden initially */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2a2a2a;
+  color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  z-index: 1000;
+  max-width: 350px;
+  width: 90%;
+  animation: popIn 0.3s ease-out;
+}
+
+#winBox h2 {
+  color: #00e676;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(0, 230, 118, 0.6);
+}
+
+#winBox p {
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+#winBox button {
+  background-color: #00c853;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#winBox button:hover {
+  background-color: #00e676;
+  transform: scale(1.05);
+}
+
+#SwinBox {
+  display: none; /* hidden initially */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2a2a2a;
+  color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  z-index: 1000;
+  max-width: 350px;
+  width: 90%;
+  animation: popIn 0.3s ease-out;
+}
+
+#SwinBox h2 {
+  color: #FFD700;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(0, 230, 118, 0.6);
+}
+
+#SwinBox p {
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+#SwinBox button {
+  background-color: #FFD700;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#SwinBox button:hover {
+  background-color: #FFD700;
+  transform: scale(1.05);
+}
+/* Animation */
+@keyframes popIn {
+  from { transform: translate(-50%, -50%) scale(0.7); opacity: 0; }
+  to   { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+
+#loseBox {
+  display: none; /* hidden initially */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2a2a2a;
+  color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  z-index: 1000;
+  max-width: 350px;
+  width: 90%;
+  animation: popIn 0.3s ease-out;
+}
+
+#loseBox h2 {
+  color: #ff1744; /* red accent */
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(255, 23, 68, 0.6);
+}
+
+#loseBox p {
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+#loseBox button {
+  background-color: #ff1744;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#loseBox button:hover {
+  background-color: #ff4569;
+  transform: scale(1.05);
+}
+
+/* Reuse same animation as win box */
+@keyframes popIn {
+  from { transform: translate(-50%, -50%) scale(0.7); opacity: 0; }
+  to   { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
